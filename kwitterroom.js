@@ -11,7 +11,7 @@ const firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig)
 
-function adduser(){
+function addUser(){
       user_name=document.getElementById("user_name").value
       firebase.database().ref("/").child(user_name).update({
             purpose:"adding user name"
@@ -26,3 +26,7 @@ row="<div class='user_name' id="+user_names+"onclick='redirectToUserName(this.id
 document.getElementById("output").innerHTML+=row
  });});}
 getData();
+function redirectToRoomName(name){
+      localStorage.setItem("user_name",name)
+      window.location="kwitterpage.html"
+}
